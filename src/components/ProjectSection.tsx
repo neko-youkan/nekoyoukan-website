@@ -26,8 +26,8 @@ export default function ProjectSection({
   imageAlt,
   features,
   technologies,
-  projectUrl = "#",
-  githubUrl = "#",
+  projectUrl,
+  githubUrl,
   reverse = false,
 }: ProjectSectionProps) {
   return (
@@ -43,65 +43,69 @@ export default function ProjectSection({
         </div>
 
         <div className="projectGrid">
-            <Reveal direction={reverse ? "right" : "left"}>
-                <div className="projectPreview">
-                    <div className="previewWindow">
-                    <div className="previewBar" aria-hidden="true">
-                        <span />
-                        <span />
-                        <span />
-                    </div>
-
-                    <div className="projectImageFrame">
-                        <Image
-                        src={image}
-                        alt={imageAlt}
-                        width={1680}
-                        height={1050}
-                        className="projectImage"
-                        />
-                    </div>
-                    </div>
+          <Reveal direction={reverse ? "right" : "left"}>
+            <div className="projectPreview">
+              <div className="previewWindow">
+                <div className="previewBar" aria-hidden="true">
+                  <span />
+                  <span />
+                  <span />
                 </div>
-            </Reveal>
 
-        <Reveal direction={reverse ? "left" : "right"}>
+                <div className="projectImageFrame">
+                  <Image
+                    src={image}
+                    alt={imageAlt}
+                    width={1680}
+                    height={1050}
+                    className="projectImage"
+                  />
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal direction={reverse ? "left" : "right"}>
             <div className="projectContent">
-                <p className="projectDescription">{description}</p>
+              <p className="projectDescription">{description}</p>
 
-                <ul className="featureList">
+              <ul className="featureList">
                 {features.map((feature) => (
-                    <li key={feature}>{feature}</li>
+                  <li key={feature}>{feature}</li>
                 ))}
-                </ul>
+              </ul>
 
-                <div className="techList">
+              <div className="techList">
                 {technologies.map((technology) => (
-                    <span key={technology}>{technology}</span>
+                  <span key={technology}>{technology}</span>
                 ))}
-                </div>
+              </div>
 
-                <div className="homePlusActions">
-                <a
+              <div className="homePlusActions">
+                {projectUrl && (
+                  <a
                     href={projectUrl}
                     className="primaryLink"
                     target="_blank"
-                    rel="noreferrer"
-                >
+                    rel="noopener noreferrer"
+                  >
                     View Project
                     <span aria-hidden="true">→</span>
-                </a>
+                  </a>
+                )}
 
-                <a
+                {githubUrl && (
+                  <a
                     href={githubUrl}
                     className="secondaryLink"
                     target="_blank"
-                    rel="noreferrer"
-                >
+                    rel="noopener noreferrer"
+                  >
                     GitHub
                     <span aria-hidden="true">↗</span>
-                </a>
-                </div>
+                  </a>
+                )}
+              </div>
             </div>
           </Reveal>
         </div>

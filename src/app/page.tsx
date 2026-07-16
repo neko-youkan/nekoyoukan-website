@@ -32,32 +32,24 @@ export default function Home() {
           "Cloudflare",
         ]}
         projectUrl="https://home-plus.nekoyoukan.com"
-        githubUrl="#"
+        githubUrl="https://github.com/neko-youkan/Home-plus"
       />
 
       <ProjectSection
         id="my-home"
         label="Personal Dashboard"
         title="My-Home"
-        lead="毎日の勉強・家計簿・ライフログを、ひとつのダッシュボードで可視化。"
-        description="My-Homeは、勉強・睡眠・体重・家計簿などを一元管理する個人用ダッシュボードです。毎日の記録をグラフやカードで確認し、自分の生活を振り返りやすくしています。"
-        image="/My-home.jpg"
-        imageAlt="My-Homeのダッシュボード画面"
+        lead="生活記録を可視化する個人用ダッシュボード"
+        description="勉強、ライフログ、家計簿を一つの画面で確認できます。"
+        image="/images/my-home.png"
+        imageAlt="My-Homeの画面"
         features={[
-          "勉強時間の可視化",
-          "ライフログ管理",
-          "家計簿・収支分析",
-          "AIコメント表示",
-          "Google Spreadsheet連携",
+          "勉強時間の記録",
+          "睡眠・体調の管理",
+          "家計簿の集計とグラフ表示",
         ]}
-        technologies={[
-          "Python",
-          "Streamlit",
-          "SQLite",
-          "Google API",
-        ]}
+        technologies={["Python", "Streamlit", "SQLite", "Google Sheets"]}
         projectUrl="https://my-home.nekoyoukan.com"
-        githubUrl="#"
         reverse
       />
       <Infrastructure />
