@@ -1,65 +1,66 @@
-import Image from "next/image";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import ProjectSection from "@/components/ProjectSection";
+import Infrastructure from "@/components/Infrastructure";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Header />
+      <Hero />
+
+      <ProjectSection
+        id="home-plus"
+        label="Featured Project"
+        title="Home+"
+        lead="毎日の生活を、ひとつの場所でもっと便利に。"
+        description="Home+は、天気・ゴミの日・献立・買い物メモ・読書記録など、毎日の生活に必要な情報をひとつにまとめたWebアプリです。スマートフォンから使いやすいことを意識しながら、機能追加と改善を続けています。"
+        image="/Home-plus.png"
+        imageAlt="Home+のダッシュボード画面"
+        features={[
+          "天気と現在地の管理",
+          "ゴミの日の登録と表示",
+          "週間献立と買い物メモ",
+          "読書記録と進捗管理",
+          "ユーザー認証と管理者機能",
+        ]}
+        technologies={[
+          "Python",
+          "Streamlit",
+          "SQLite",
+          "AWS",
+          "Cloudflare",
+        ]}
+        projectUrl="https://home-plus.nekoyoukan.com"
+        githubUrl="#"
+      />
+
+      <ProjectSection
+        id="my-home"
+        label="Personal Dashboard"
+        title="My-Home"
+        lead="毎日の勉強・家計簿・ライフログを、ひとつのダッシュボードで可視化。"
+        description="My-Homeは、勉強・睡眠・体重・家計簿などを一元管理する個人用ダッシュボードです。毎日の記録をグラフやカードで確認し、自分の生活を振り返りやすくしています。"
+        image="/My-home.jpg"
+        imageAlt="My-Homeのダッシュボード画面"
+        features={[
+          "勉強時間の可視化",
+          "ライフログ管理",
+          "家計簿・収支分析",
+          "AIコメント表示",
+          "Google Spreadsheet連携",
+        ]}
+        technologies={[
+          "Python",
+          "Streamlit",
+          "SQLite",
+          "Google API",
+        ]}
+        projectUrl="https://my-home.nekoyoukan.com"
+        githubUrl="#"
+        reverse
+      />
+      <Infrastructure />
+    </>
   );
 }
