@@ -1,29 +1,50 @@
 export default function AboutPage() {
+  const technologies = [
+    "Python",
+    "Linux",
+    "Docker",
+    "Next.js",
+    "TypeScript",
+    "Streamlit",
+    "SQLite",
+    "PostgreSQL",
+    "Redis",
+    "AWS",
+    "Cloudflare",
+    "Git",
+  ];
+
   return (
-    <main className="pageContainer">
-      <h1>About</h1>
+    <main className="aboutPage">
+      <section className="aboutHero">
+        <p className="sectionLabel">Profile</p>
 
-      <section>
-        <h2>自己紹介</h2>
-        <p>
-          音楽大学でクラリネットを専攻した後、IT業界に入り、
-          現在はインフラ・Web開発を中心に学習と個人開発を続けています。
+        <h1>About</h1>
+
+        <p className="aboutText">
+          個人でWebアプリやサーバーの構築・運用を行っています。
+        </p>
+
+        <p className="aboutText">
+          Pythonを中心に、Linux、Docker、AWSなどを使いながら、
+          生活を少し便利にするツールやサービスを開発しています。
+        </p>
+
+        <p className="aboutText">
+          このサイトでは、制作したアプリや技術記事をまとめています。
         </p>
       </section>
 
-      <section>
-        <h2>これまでの経験</h2>
-        <p>
-          舞台進行や接客業務では、相手の要望をくみ取り、
-          関係者と調整しながら物事を進める力を培いました。
-        </p>
-      </section>
+      <section className="aboutSkills">
+        <h2>Tech Stack</h2>
 
-      <section>
-        <h2>現在取り組んでいること</h2>
-        <p>
-          Home+、My-Home、Misskeyサーバーなどの個人開発を行っています。
-        </p>
+        <div className="techGrid">
+          {technologies.map((tech) => (
+            <span key={tech} className="techChip">
+              {tech}
+            </span>
+          ))}
+        </div>
       </section>
     </main>
   );
