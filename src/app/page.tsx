@@ -41,7 +41,7 @@ export default function Home() {
         title="My-Home"
         lead="生活記録を可視化する個人用ダッシュボード"
         description="勉強、ライフログ、家計簿を一つの画面で確認できます。"
-        image="/images/my-home.png"
+        image="/My-home.jpg"
         imageAlt="My-Homeの画面"
         features={[
           "勉強時間の記録",
