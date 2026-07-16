@@ -1105,13 +1105,54 @@ a {
 }
 
 .aboutPage {
-  width: min(900px, calc(100% - 48px));
-  margin: 0 auto;
-  padding: 160px 0 120px;
+  width: 100%;
+  padding: 0;
 }
 
 .aboutHero {
-  margin-bottom: 80px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 78vh;
+
+  padding: 180px min(10vw, 160px);
+
+  overflow: hidden;
+}
+
+.aboutHero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    url("/beach.jpg")
+    center center / cover
+    no-repeat;
+
+  z-index: -2;
+}
+
+.aboutHero::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.88) 0%,
+      rgba(255,255,255,.72) 35%,
+      rgba(255,255,255,.22) 70%,
+      rgba(255,255,255,0) 100%
+    );
+
+  z-index: -1;
 }
 
 .aboutHero h1 {
@@ -1128,6 +1169,14 @@ a {
   color: #4b647c;
   font-size: 1.1rem;
   line-height: 1.9;
+}
+
+.aboutSkills {
+  width: min(900px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 100px 0 120px;
+
+  background: white;
 }
 
 .aboutSkills h2 {
