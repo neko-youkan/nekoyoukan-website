@@ -1130,9 +1130,7 @@ a {
   inset: 0;
 
   background:
-    url("/beach.jpg")
-    center center / cover
-    no-repeat;
+    url("/beach.png") center/cover no-repeat;
 
   z-index: -2;
 }
