@@ -1,51 +1,44 @@
+import Header from "@/components/Header";
+
 export default function AboutPage() {
-  const technologies = [
-    "Python",
-    "Linux",
-    "Docker",
-    "Next.js",
-    "TypeScript",
-    "Streamlit",
-    "SQLite",
-    "PostgreSQL",
-    "Redis",
-    "AWS",
-    "Cloudflare",
-    "Git",
-  ];
-
   return (
-    <main className="aboutPage">
-      <section className="aboutHero">
-        <p className="sectionLabel">Profile</p>
+    <>
+      <Header />
 
-        <h1>About</h1>
+      <main className="aboutPage">
+        <section className="aboutHero">
+          <p className="sectionLabel">About</p>
 
-        <p className="aboutText">
-          個人でWebアプリやサーバーの構築・運用を行っています。
-        </p>
+          <h1>つくることを、楽しむ。</h1>
 
-        <p className="aboutText">
-          Pythonを中心に、Linux、Docker、AWSなどを使いながら、
-          生活を少し便利にするツールやサービスを開発しています。
-        </p>
+          <p className="aboutText">
+            インフラ構築や個人開発を通して、
+            日々新しいことを学びながら、
+            便利なものを形にしています。
+          </p>
 
-        <p className="aboutText">
-          このサイトでは、制作したアプリや技術記事をまとめています。
-        </p>
-      </section>
+          <p className="aboutText">
+            Linux、Docker、AWS、Pythonなどを使い、
+            Webアプリや自宅サーバーの構築・運用に取り組んでいます。
+          </p>
+        </section>
 
-      <section className="aboutSkills">
-        <h2>Tech Stack</h2>
+        <section className="aboutSkills">
+          <p className="sectionLabel">Skills</p>
+          <h2>興味のある技術</h2>
 
-        <div className="techGrid">
-          {technologies.map((tech) => (
-            <span key={tech} className="techChip">
-              {tech}
-            </span>
-          ))}
-        </div>
-      </section>
-    </main>
+          <div className="techGrid">
+            <span className="techChip">Linux</span>
+            <span className="techChip">AWS</span>
+            <span className="techChip">Docker</span>
+            <span className="techChip">Python</span>
+            <span className="techChip">Next.js</span>
+            <span className="techChip">Streamlit</span>
+            <span className="techChip">SQLite</span>
+            <span className="techChip">Cloudflare</span>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }

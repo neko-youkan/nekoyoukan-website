@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Header() {
   return (
     <header className="header">
-      <div className="brand">
+      <Link href="/" className="brand">
         <Image
           src="/crab.png"
           alt="Logo"
@@ -12,7 +12,7 @@ export default function Header() {
           height={42}
         />
         <span>nekoyoukan</span>
-      </div>
+      </Link>
 
       <nav className="navigation">
         <Link href="/#projects">Projects</Link>
