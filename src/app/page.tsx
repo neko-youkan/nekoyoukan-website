@@ -52,6 +52,34 @@ export default function Home() {
         projectUrl="https://my-home.nekoyoukan.com"
         reverse
       />
+
+      <ProjectSection
+        id="misskey"
+        label="Self-Hosted Server"
+        title="Misskey Server"
+        lead="自宅サーバーで運用する個人向けSNS"
+        description="UbuntuとDockerを使用して、Misskeyのおひとり様サーバーを構築・運用しています。独自ドメイン、HTTPS化、死活監視、ステータスページまで含めて管理しています。"
+        image="/misskey.png"
+        imageAlt="Misskeyサーバーの画面"
+        features={[
+          "Docker ComposeによるMisskey構築",
+          "Cloudflareを利用した独自ドメイン・HTTPS化",
+          "Uptime Kumaによる死活監視",
+          "ServerStatusによるサーバー状態の可視化",
+          "絵文字・アップロード容量・連合設定の管理",
+        ]}
+        technologies={[
+          "Ubuntu",
+          "Docker",
+          "Misskey",
+          "PostgreSQL",
+          "Redis",
+          "Cloudflare",
+          "Uptime Kuma",
+        ]}
+        projectUrl="https://misskey.nekoyoukan.com"
+      />
+
       <Infrastructure />
     </>
   );
