@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero">
       <div className="heroContent">
-        <h1>nekoyoukan</h1>
+        <h1>ねこ羊羹</h1>
 
         <p className="jobTitle">
           Infrastructure Engineer × Developer

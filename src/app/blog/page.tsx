@@ -7,6 +7,8 @@ import {
   getQiitaArticles,
 } from "../../lib/articles";
 
+import Footer from "@/components/Footer";
+
 export const metadata: Metadata = {
   title: "Blog | nekoyoukan",
   description:
@@ -141,6 +143,7 @@ export default async function BlogPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
