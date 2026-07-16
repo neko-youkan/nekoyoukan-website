@@ -8,22 +8,61 @@
   --white: #ffffff;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 100svh;
+
   margin: 0;
+  padding: 0;
+
+  overflow-x: clip;
+
   background: #ffffff;
   color: var(--text);
+
   font-family:
     Arial,
     "Noto Sans JP",
     sans-serif;
+}
+
+main,
+section,
+header,
+footer {
+  width: 100%;
+  min-width: 0;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 a {
@@ -331,22 +370,34 @@ a {
 
 @media (max-width: 720px) {
   .header {
-    top: 24px;
-    padding: 10px 20px;
+    top: 14px;
+    left: 12px;
+
+    width: calc(100% - 24px);
+    max-width: none;
+
+    padding: 10px 14px;
+
+    transform: none;
   }
 
   .brand {
+    min-width: 0;
     gap: 8px;
-    font-size: 13px;
-    letter-spacing: 0.12em;
+
+    font-size: 12px;
+    letter-spacing: 0.1em;
   }
 
   .crab {
+    flex-shrink: 0;
     font-size: 28px;
   }
 
   .navigation {
-    gap: 17px;
+    flex-shrink: 0;
+    gap: 16px;
+
     font-size: 12px;
   }
 
@@ -355,18 +406,36 @@ a {
   }
 
   .hero {
+    width: 100%;
+    min-width: 0;
+
     background-position: center center;
   }
 
+  .heroContent {
+    width: 100%;
+    min-width: 0;
+
+    padding-right: 20px;
+    padding-left: 20px;
+
+    transform: translateY(-4vh);
+  }
+
   .heroContent h1 {
-    font-size: clamp(48px, 17vw, 70px);
-    letter-spacing: 0.07em;
+    max-width: 100%;
+
+    font-size: clamp(46px, 15vw, 66px);
+    letter-spacing: 0.05em;
+
+    overflow-wrap: anywhere;
   }
 
   .jobTitle {
     margin-top: 28px;
-    font-size: 14px;
-    letter-spacing: 0.12em;
+
+    font-size: 13px;
+    letter-spacing: 0.1em;
   }
 
   .message {
@@ -375,12 +444,16 @@ a {
   }
 
   .projectButton {
-    min-width: 220px;
+    width: min(280px, 100%);
+    min-width: 0;
+
     margin-top: 42px;
+    padding: 17px 24px;
   }
 
   .projects {
-    padding: 90px 22px;
+    width: 100%;
+    padding: 90px 20px;
   }
 
   .sectionInner h2 {
@@ -388,8 +461,9 @@ a {
   }
 
   .projectList article {
-    grid-template-columns: 42px 1fr auto;
+    grid-template-columns: 32px minmax(0, 1fr) auto;
     gap: 10px;
+
     padding: 27px 0;
   }
 
@@ -809,22 +883,6 @@ a {
   line-height: 2;
 }
 
-  .projectSectionInner {
-    padding: 28px 20px;
-    border-radius: 24px;
-  }
-
-  .projectHeading {
-    margin-bottom: 42px;
-  }
-
-  .projectHeading h2 {
-    font-size: clamp(52px, 16vw, 76px);
-  }
-
-  .projectImageFrame {
-    aspect-ratio: 4 / 3;
-  }
 
 @media (max-width: 900px) {
   .projectGrid {
@@ -848,19 +906,99 @@ a {
 
 @media (max-width: 720px) {
   .projectSection {
-    padding: 100px 22px;
+    width: 100%;
+    min-width: 0;
+
+    padding: 72px 16px;
+  }
+
+  .projectSectionInner {
+    width: 100%;
+    min-width: 0;
+
+    padding: 32px 20px;
+
+    border-radius: 24px;
   }
 
   .projectHeading {
-    margin-bottom: 42px;
+    width: 100%;
+    min-width: 0;
+
+    margin-bottom: 36px;
   }
 
   .projectHeading h2 {
-    font-size: clamp(52px, 16vw, 76px);
+    max-width: 100%;
+
+    font-size: clamp(44px, 14vw, 68px);
+    line-height: 1.05;
+
+    overflow-wrap: anywhere;
+  }
+
+  .projectLead {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  .projectGrid {
+    width: 100%;
+    min-width: 0;
+
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+
+  .projectGrid > *,
+  .projectGrid > .reveal,
+  .projectPreview,
+  .projectContent {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
   }
 
   .projectImageFrame {
+    width: 100%;
+    max-width: 100%;
+
     aspect-ratio: 4 / 3;
+  }
+
+  .previewWindow {
+    width: 100%;
+    max-width: 100%;
+
+    transform: none;
+  }
+
+  .previewWindow:hover {
+    transform: translateY(-4px);
+  }
+
+  .projectDescription {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .featureList {
+    width: 100%;
+  }
+
+  .techList {
+    width: 100%;
+  }
+
+  .homePlusActions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .primaryLink,
+  .secondaryLink {
+    width: 100%;
+    min-width: 0;
   }
 }
 
