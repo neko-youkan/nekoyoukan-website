@@ -1349,3 +1349,81 @@ a {
   background: #2777a8;
   color: white;
 }
+
+/* ========================================
+   ProjectSection スマホ表示の修正
+   reverse指定も必ず1列にする
+======================================== */
+
+@media (max-width: 900px) {
+  .projectGrid,
+  .projectSectionReverse .projectGrid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+
+    width: 100%;
+    min-width: 0;
+  }
+
+  .projectSectionReverse .projectGrid > .reveal:first-child,
+  .projectSectionReverse .projectGrid > .reveal:last-child {
+    order: initial;
+  }
+
+  .projectGrid > .reveal,
+  .projectPreview,
+  .projectContent {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  .projectSection,
+  .projectSectionReverse {
+    width: 100%;
+    min-width: 0;
+
+    padding: 72px 16px;
+    overflow: hidden;
+  }
+
+  .projectSectionInner {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+
+    padding: 32px 20px;
+  }
+
+  .projectGrid,
+  .projectSectionReverse .projectGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+
+  .previewWindow,
+  .projectImageFrame {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .projectImageFrame {
+    aspect-ratio: 4 / 3;
+  }
+
+  .projectContent {
+    display: block;
+  }
+
+  .projectDescription,
+  .featureList,
+  .techList,
+  .homePlusActions {
+    width: 100%;
+    max-width: 100%;
+  }
+}
