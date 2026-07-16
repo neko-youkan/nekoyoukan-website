@@ -1,26 +1,30 @@
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <section className="hero">
       <div className="heroContent">
-        <h1>ねこ羊羹</h1>
+        <h1>nekoyoukan</h1>
 
         <p className="jobTitle">
-          Infrastructure Engineer
-          <br />
-          &amp; Personal Developer
+          Infrastructure Engineer × Developer
         </p>
+
+        <div className="divider" />
 
         <p className="message">
           つくることを、楽しむ。
         </p>
 
-        <a href="#projects" className="projectButton">
-          <span>Explore Projects</span>
-          <span className="buttonArrow" aria-hidden="true">
-            →
-          </span>
-        </a>
+        <Link href="/#projects" className="projectButton">
+          Explore Projects
+          <span className="buttonArrow">↓</span>
+        </Link>
       </div>
+
+      {/* <div className="scrollGuide">
+        <span />
+      </div> */}
     </section>
   );
 }

@@ -245,7 +245,8 @@ a {
 }
 
 .projectButton:hover .buttonArrow {
-  transform: translateX(5px);
+  animation-play-state: paused;
+  transform: translateY(6px);
 }
 
 .scrollGuide {
@@ -1425,5 +1426,31 @@ a {
   .homePlusActions {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+#projects {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 720px) {
+  #projects {
+    scroll-margin-top: 90px;
+  }
+}
+
+.projectButton .buttonArrow {
+  display: inline-block;
+  animation: arrowFloat 1.8s ease-in-out infinite;
+}
+
+@keyframes arrowFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(4px);
   }
 }
