@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "nekoyoukan",
   description:
     "インフラ構築と個人開発のプロジェクトを紹介するポートフォリオサイト",
+  icons: {
+    icon: "/crab.png",
+    apple: "/crab.png",
+  },
 };
 
 export const viewport: Viewport = {
